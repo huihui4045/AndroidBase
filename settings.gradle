@@ -1,1 +1,1 @@
-include ':app', ':aibaseui'
+include ':app', ':aibaseui', ':baselibrary'

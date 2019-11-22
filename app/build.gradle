@@ -2,42 +2,43 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
+
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
-        applicationId "com.alizhezi.base"
-        minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        flavorDimensions "version"
+        ndk {
+            abiFilters 'armeabi-v7a'
         }
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
-    implementation 'com.google.android.material:material:1.0.0-beta01'
-    implementation 'androidx.vectordrawable:vectordrawable:1.0.0-beta01'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation dep.appcompat
+    implementation dep.core_ktx
+    implementation dep.material
+    implementation dep.cardview
+    implementation dep.recyclerview
+    implementation dep.constraintlayout
+    implementation dep.navigation_fragment
+    implementation dep.navigation_ui
+    implementation dep.lifecycle_extensions
+    implementation dep.navigation_fragment_ktx
+    implementation dep.navigation_ui_ktx
+    testImplementation test.junit
+    androidTestImplementation test.runner
+    androidTestImplementation test.espresso_core
+    implementation 'com.github.huihui4045:AndroidBase:0.1.3'
 
-    implementation 'com.github.huihui4045:AndroidBase:0.1.0'
-
-   // implementation 'com.alizhezi:baseui:1.0.0'
-    //implementation 'com.alizhez:baseui:0.2.0'
-    implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha09'
-    implementation "android.arch.navigation:navigation-ui:1.0.0-alpha09"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()
