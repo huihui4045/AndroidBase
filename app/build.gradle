@@ -37,7 +37,7 @@ dependencies {
     testImplementation test.junit
     androidTestImplementation test.runner
     androidTestImplementation test.espresso_core
-    implementation 'com.github.huihui4045:AndroidBase:0.1.4'
+    implementation 'com.github.huihui4045:AndroidBase:0.1.6'
 
 }
 repositories {

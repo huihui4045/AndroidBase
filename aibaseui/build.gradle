@@ -33,5 +33,4 @@ dependencies {
     testImplementation test.junit
     androidTestImplementation test.runner
     androidTestImplementation test.espresso_core
-    implementation project(path: ':baselibrary')
 }
