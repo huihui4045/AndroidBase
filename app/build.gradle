@@ -31,7 +31,10 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 
-    implementation 'com.alizhezi:baseui:1.0.0'
+    implementation 'com.github.huihui4045:AndroidBase:0.1.0'
+
+   // implementation 'com.alizhezi:baseui:1.0.0'
+    //implementation 'com.alizhez:baseui:0.2.0'
     implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha09'
     implementation "android.arch.navigation:navigation-ui:1.0.0-alpha09"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
