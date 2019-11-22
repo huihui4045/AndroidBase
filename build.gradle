@@ -22,6 +22,9 @@ allprojects {
         google()
         jcenter()
 
+
+        maven { url 'https://jitpack.io' }
+
         maven {
             url 'https://novoda.bintray.com/snapshots'
         }
@@ -29,6 +32,8 @@ allprojects {
         maven {
             url 'https://dl.bintray.com/huihui1010/aibaseui'
         }
+
+
 
     }
 }
